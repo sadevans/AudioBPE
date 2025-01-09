@@ -1,0 +1,3 @@
+[submodule "audio-adaptive-tokenizer"]
+	path = audio-adaptive-tokenizer
+	url = https://github.com/mrsndmn/audio-adaptive-tokenizer.git
