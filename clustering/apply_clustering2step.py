@@ -48,7 +48,7 @@ def main(speaker_name, max_clusters, min_clusters, cluster_range, step2_clusters
         columns = ['segment_name']
     else:
         df = pd.read_csv(f'./annotation_segments_{optimal_clusters}_{speaker_name}sp.txt')
-        columns = list(df.columns())
+        columns = list(df.columns)
 
     quantizer1, quant2_segments_labels = clustering.cluster_embeddings_in2steps(
         all_embeddings,
