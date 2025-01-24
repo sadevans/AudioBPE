@@ -41,7 +41,7 @@ def main(speaker_name, max_clusters, min_clusters, cluster_range):
     print(f'Оптимальное количество кластеров (по силуэту): {optimal_clusters}')
 
     model = ApplyKmeans(
-        km_path=f'{SSD_PATH}/best_kmeans_model_{optimal_clusters}.joblib',
+        km_path=f'{SSD_PATH}/models/best_kmeans_model_{optimal_clusters}.joblib',
         use_gpu=False,
     )
 

@@ -83,7 +83,7 @@ def find_optimal_clusters(data, min_clusters=2, max_clusters=15, cluster_range=1
         if current_silhouette_score > best_silhouette_score:
             best_silhouette_score = current_silhouette_score
             best_model = kmeans
-            joblib.dump(best_model, f'best_kmeans_model_{n_clusters}.joblib')
+            joblib.dump(best_model, f'{SSD_PATH}/models/best_kmeans_model_{n_clusters}.joblib')
             print(f'New best model saved with silhouette score: {best_silhouette_score:.4f} for {n_clusters} clusters.')
 
     return cluster_range, distortions, silhouette_scores, models
@@ -129,7 +129,7 @@ def cluster_embeddings_in2steps(embeddings, batch_size=10000, n_clusters_step1=5
         cluster_centers = quantizer1.cluster_centers_
     else:
         quantizer1 = kmeans.ApplyKmeans(
-            km_path=f'{SSD_PATH}/best_kmeans_model_{n_clusters_step1}.joblib',
+            km_path=f'{SSD_PATH}/models/best_kmeans_model_{n_clusters_step1}.joblib',
         )
         cluster_centers = quantizer1.C_np.T
 
